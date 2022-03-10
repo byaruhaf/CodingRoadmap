@@ -7,8 +7,18 @@ Coding roadmap project's from [engineeringwithutsav](https://www.engineeringwith
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 [![Twitter](https://img.shields.io/badge/twitter-@byaruhaf-blue.svg)](http://twitter.com/byaruhaf)
 
-# About Me
+## About Me
 ![Profile](Doc/About.jpg)
+
+## How To Use 
+Individual playgrouds can be opend directly via the links Listed below.
+
+The playgrounds are also grouped in two workspace files.
+
+* Projects.xcworkspace
+* Self_Assessment.xcworkspace
+
+Open the workspace files to navigate the playgound grouped for Projects's and Self Assessment's.
 
 ## Roadmap Projects's
 ---
