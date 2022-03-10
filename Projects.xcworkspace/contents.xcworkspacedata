@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <Group
+      location = "group:Projects/Module_1_String_Manipulation"
+      name = "Module_1_String_Manipulation">
+      <FileRef
+         location = "group:Project_Case_Converter.playground">
+      </FileRef>
+      <FileRef
+         location = "group:README.md">
+      </FileRef>
+   </Group>
+   <Group
+      location = "group:Projects/Module_2_LinkedLists"
+      name = "Module_2_LinkedLists">
+      <FileRef
+         location = "group:README.md">
+      </FileRef>
+      <FileRef
+         location = "group:Project_Browser_History.playground">
+      </FileRef>
+   </Group>
+   <Group
+      location = "group:Projects/Module_3_Hashtables"
+      name = "Module_3_Hashtables">
+      <FileRef
+         location = "group:README.md">
+      </FileRef>
+      <FileRef
+         location = "group:Project_Caesar_Cipher.playground">
+      </FileRef>
+   </Group>
+   <Group
+      location = "group:Projects/Module_4_Stacks"
+      name = "Module_4_Stacks">
+      <FileRef
+         location = "group:README.md">
+      </FileRef>
+      <FileRef
+         location = "group:Project_Basic_Calculator.playground">
+      </FileRef>
+   </Group>
+   <Group
+      location = "group:Projects/Module_5_Queues"
+      name = "Module_5_Queues">
+      <FileRef
+         location = "group:README.md">
+      </FileRef>
+      <FileRef
+         location = "group:Project_Circular_Queue.playground">
+      </FileRef>
+   </Group>
+   <Group
+      location = "group:Projects/Module_6_Recursion"
+      name = "Module_6_Recursion">
+      <FileRef
+         location = "group:README.md">
+      </FileRef>
+      <FileRef
+         location = "group:Project_Deep_Copy.playground">
+      </FileRef>
+   </Group>
+   <Group
+      location = "group:Projects/Module_7_Binary_Search"
+      name = "Module_7_Binary_Search">
+      <FileRef
+         location = "group:README.md">
+      </FileRef>
+      <FileRef
+         location = "group:Project_Dictionary_Search.playground">
+      </FileRef>
+   </Group>
+   <Group
+      location = "group:Projects/Module_8_Trees"
+      name = "Module_8_Trees">
+      <FileRef
+         location = "group:README.md">
+      </FileRef>
+      <FileRef
+         location = "group:Project_Trie.playground">
+      </FileRef>
+   </Group>
+   <Group
+      location = "group:Projects/Module_9_Graphs"
+      name = "Module_9_Graphs">
+      <FileRef
+         location = "group:README.md">
+      </FileRef>
+      <FileRef
+         location = "group:Project_Trie.playground">
+      </FileRef>
+   </Group>
+   <Group
+      location = "group:Projects/Module_10_Final_Project"
+      name = "Module_10_Final_Project">
+      <FileRef
+         location = "group:README.md">
+      </FileRef>
+      <FileRef
+         location = "group:Final_Project_BMW.playground">
+      </FileRef>
+   </Group>
+</Workspace>
