@@ -9,7 +9,7 @@ This [coding roadmap](https://www.engineeringwithutsav.com/coding-roadmap) is a 
 
 
 ## About Me
-![Profile](Doc/About.jpg)
+![Profile](Doc/About.png)
 
 ## My Reasons For Doing This Roadmap
 * Build a solid foundation around the core concepts of programming.
@@ -54,4 +54,13 @@ Open the workspace files to navigate the playgound grouped for Projects's and Se
 * [Module 9](./Self_Assessment/Module_9_Graphs/)
 
 ##  Final Roadmap Project
-video showing final project in action
+Add video showing final project in action
+
+## Study List
+
+* [Computer Science Distilled](https://amzn.to/3vbMcqP) (Wladston Ferreira Filho)
+* [Grokking Algorithms](https://amzn.to/3O4MtVa) (Aditya Bhargava)
+* [Introduction To Algorithms](https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/) (MIT)
+* [Data Structures & Algorithms in Swift](https://amzn.to/3O47LlN) (Raywenderlich Tutorial Team)
+* [Data Structures & Algorithms in Swift](https://www.waynewbishop.com/ios-interview/book) (Waynew Bishop)
+* [LeetCode](https://leetcode.com/)
