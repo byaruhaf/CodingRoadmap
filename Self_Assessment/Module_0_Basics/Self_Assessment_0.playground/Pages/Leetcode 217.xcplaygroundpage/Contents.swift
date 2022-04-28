@@ -16,3 +16,4 @@ print(Solution().containsDuplicate(nums1))
 var nums2 = [1,2,3,4]
 print(nums2)
 print(Solution().containsDuplicate(nums2))
+
