@@ -24,3 +24,8 @@ convert("Hello, World.", "uppercasesnake")
 // Output:
 HELLO_WORLD
 ```
+
+## Resources
+### Books
+| ![Profile](Img/StringBook.png)  | [Guide to Swift Strings](https://flight.school/books/strings/) |
+| ------------- | ------------- |

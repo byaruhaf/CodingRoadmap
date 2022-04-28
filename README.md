@@ -9,7 +9,7 @@ This [coding roadmap](https://www.engineeringwithutsav.com/coding-roadmap) is a 
 
 
 ## About Me
-![Profile](Doc/About.png)
+![Profile](Img/About.png)
 
 ## My Reasons For Doing This Roadmap
 * Build a solid foundation around the fundamentals & core concepts of programming.
