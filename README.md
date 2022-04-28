@@ -12,8 +12,7 @@ This [coding roadmap](https://www.engineeringwithutsav.com/coding-roadmap) is a 
 ![Profile](Doc/About.png)
 
 ## My Reasons For Doing This Roadmap
-* Build a solid foundation around the core concepts of programming.
-* Brush up on the fundamentals.
+* Build a solid foundation around the fundamentals & core concepts of programming.
 * Preparing for software engineering interviews.
 
 
