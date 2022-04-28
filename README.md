@@ -5,7 +5,7 @@
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 [![Twitter](https://img.shields.io/badge/twitter-@byaruhaf-blue.svg)](http://twitter.com/byaruhaf)
 
-This [coding roadmap](https://www.engineeringwithutsav.com/coding-roadmap) is a series of projects that are designed by [Utsav](https://www.engineeringwithutsav.com/about)
+This [coding roadmap](https://www.engineeringwithutsav.com/coding-roadmap) is a series of projects  designed by [Utsav](https://www.engineeringwithutsav.com/about)
 
 
 ## About Me
