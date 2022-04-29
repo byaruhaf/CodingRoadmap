@@ -2,42 +2,89 @@ import Cocoa
 import Foundation
 import XCTest
 
+extension String {
+    var stripped: String {
+        let okayChars = Set("abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLKMNOPQRSTUVWXYZ1234567890")
+        return self.filter {okayChars.contains($0) }
+    }
+}
+
 class Solution {
     enum SentenceCase: String {
         case camel, snake, kebab, pascal, uppercasesnake;
     }
     
-    func convert(_ input:String, _ newCase:String) -> String {
+    func convert(_ sentence:String, _ newCase:String) -> String {
         switch newCase {
         case SentenceCase.camel.rawValue:
-            return camelConvert(input)
+            return camelConvert(sentence)
         case SentenceCase.snake.rawValue:
-            return snakeConvert(input)
+            return snakeConvert(sentence)
         case SentenceCase.kebab.rawValue:
-            return kebabConvert(input)
+            return kebabConvert(sentence)
         case SentenceCase.pascal.rawValue:
-            return pascalConvert(input)
+            return pascalConvert(sentence)
         case SentenceCase.uppercasesnake.rawValue:
-            return uppercasesnakeConvert(input)
+            return uppercasesnakeConvert(sentence)
         default:
-            return ""
+            return sentence
         }
     }
     
+    /// Convert String to camel case
+    /// - Parameter s: Input string to be converted
+    /// - Returns: Converted String in camel case
     func camelConvert(_ s:String) -> String {
-        return "helloWorld"
+        var sArray = s.stripped.components(separatedBy: .whitespaces)
+        for (index, item) in sArray.enumerated() {
+            if index == 0 {
+                sArray[index] = item.lowercased()
+                continue
+            }
+            sArray[index] = item.lowercased().capitalized
+        }
+        return sArray.joined(separator: "")
     }
+    /// Convert String to snake case
+    /// - Parameter s: Input string to be converted
+    /// - Returns: Converted String in snake case
     func snakeConvert(_ s:String) -> String {
-        return "hello_world"
+        var sArray = s.stripped.components(separatedBy: .whitespaces)
+        for (index, item) in sArray.enumerated() {
+            sArray[index] = item.lowercased()
+        }
+        return sArray.joined(separator: "_")
     }
+    ///  Convert String to kebab case
+    /// - Parameter s: Input string to be converted
+    /// - Returns:  Converted String in kebab case
     func kebabConvert(_ s:String) -> String {
-        return "hello-world"
+        var sArray = s.stripped.components(separatedBy: .whitespaces)
+        for (index, item) in sArray.enumerated() {
+            sArray[index] = item.lowercased()
+        }
+        return sArray.joined(separator: "-")
     }
+    ///  Convert String to pascal case
+    /// - Parameter s: Input string to be converted
+    /// - Returns:  Converted String in pascal case
     func pascalConvert(_ s:String) -> String {
-        return "HelloWorld"
+        var sArray = s.stripped.components(separatedBy: .whitespaces)
+        for (index, item) in sArray.enumerated() {
+            sArray[index] = item.lowercased().capitalized
+        }
+        return sArray.joined(separator: "")
     }
+    
+    /// Convert String to  uppercase snake case
+    /// - Parameter s: Input string to be converted
+    /// - Returns:  Converted String in uppercase snake case
     func uppercasesnakeConvert(_ s:String) -> String {
-        return "HELLO_WORLD"
+        var sArray = s.stripped.components(separatedBy: .whitespaces)
+        for (index, item) in sArray.enumerated() {
+            sArray[index] = item.uppercased()
+        }
+        return sArray.joined(separator: "_")
     }
 
 }
@@ -57,29 +104,29 @@ class SolutionTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample1() {
+    func testCamelConverter() {
         print("                ")
-        print("[Test Example 1]")
+        print("[Test Camel Converter]")
         XCTAssert(solution.convert("Hello, World.", "camel") == "helloWorld")
     }
-    func testExample2() {
+    func testSnakeConverter() {
         print("                ")
-        print("[Test Example 2]")
+        print("[Test snake Converter]")
         XCTAssert(solution.convert("Hello, World.", "snake") == "hello_world")
     }
-    func testExample3() {
+    func testKebabConverter() {
         print("                ")
-        print("[Test Example 3]")
+        print("[Test kebab Converter]")
         XCTAssert(solution.convert("Hello, World.", "kebab") == "hello-world")
     }
-    func testExample4() {
+    func testPascalConverter() {
         print("                ")
-        print("[Test Example 4]")
+        print("[Test pascal Converter]")
         XCTAssert(solution.convert("Hello, World.", "pascal") == "HelloWorld")
     }
-    func testExample5() {
+    func testuppercaseSnakeConverter() {
         print("                ")
-        print("[Test Example 5]")
+        print("[Test uppercase snake Converter]")
         XCTAssert(solution.convert("Hello, World.", "uppercasesnake") == "HELLO_WORLD")
     }
 }
