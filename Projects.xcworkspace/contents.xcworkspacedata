@@ -85,10 +85,10 @@
       location = "group:Projects/Module_9_Graphs"
       name = "Module_9_Graphs">
       <FileRef
-         location = "group:README.md">
+         location = "group:Project_ThoughtWorks_Trains_Problem.playground">
       </FileRef>
       <FileRef
-         location = "group:Project_Trie.playground">
+         location = "group:README.md">
       </FileRef>
    </Group>
    <Group
