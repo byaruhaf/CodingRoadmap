@@ -6,15 +6,26 @@ import XCTest
 
 class Solution {
     func generate(_ numRows: Int) -> [[Int]] {
-        var result:[[Int]]  = [[]]
+        var result:[[Int]]  = [[1]]
         
-        if numRows == 1 {
-            return [[1]]
-        } else {
-            result = generate(numRows - 1)
+        if numRows == 1{
+            return result
         }
         
-        return  [[]]
+        for _ in 0...(numRows - 2) {
+            let lastRow = result[result.count - 1]
+            let calRow = [0]+lastRow+[0]
+            var newRow:[Int] = []
+            for j in 0...(lastRow.count) {
+                let newinput = calRow[j] + calRow[j+1]
+                newRow.append(newinput)
+            }
+            result.append(newRow)
+        }
+
+        print(result)
+        
+        return  result
     }
 }
 
