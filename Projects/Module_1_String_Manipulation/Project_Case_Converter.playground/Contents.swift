@@ -147,3 +147,4 @@ class TestObserver: NSObject, XCTestObservation {
 let testObserver = TestObserver()
 XCTestObservationCenter.shared.addTestObserver(testObserver)
 SolutionTests.defaultTestSuite.run()
+ 
