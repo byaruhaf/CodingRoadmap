@@ -7,7 +7,7 @@
 
 This [coding roadmap](https://www.engineeringwithutsav.com/coding-roadmap) is a series of projects  designed by [Utsav](https://www.engineeringwithutsav.com/about)
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/dPb1bg1mVLg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/dPb1bg1mVLg/0.jpg)](https://www.youtube.com/watch?v=YOUTUBE_VIDEO_ID_HERE)
 
 
 ## About Me
