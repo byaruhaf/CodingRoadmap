@@ -17,9 +17,9 @@ public class ListNode {
 
 class Solution {
     func deleteNode(_ node: ListNode?) {
-        let node = node
-        node!.val = node!.next!.val
-        node!.next = node!.next!.next
+        let currentNode = node
+        currentNode!.val = currentNode!.next!.val
+        currentNode!.next = currentNode!.next!.next
     }
 }
 

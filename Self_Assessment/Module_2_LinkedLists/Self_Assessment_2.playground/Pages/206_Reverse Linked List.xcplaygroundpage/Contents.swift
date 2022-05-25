@@ -26,15 +26,15 @@ extension ListNode: CustomStringConvertible {
 class Solution {
     func reverseList(_ head: ListNode?) -> ListNode? {
         var head = head
-        var tmp:ListNode? = nil
-        var prev:ListNode? = nil
+        var tempNode:ListNode? = nil
+        var prevNode:ListNode? = nil
         while head != nil {
-            tmp = head?.next
-            head?.next = prev
-            prev = head
-            head = tmp
+            tempNode = head?.next
+            head?.next = prevNode
+            prevNode = head
+            head = tempNode
         }
-        return prev
+        return prevNode
     }
     
 }

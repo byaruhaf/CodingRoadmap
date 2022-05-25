@@ -1,7 +1,81 @@
 //: [Previous](@previous)
 
-import Foundation
+//https://leetcode.com/problems/remove-linked-list-elements/submissions/
 
-var greeting = "Hello, playground"
+import XCTest
 
-//: [Next](@next)
+
+//Definition for singly-linked list.
+public class ListNode {
+    public var val: Int
+    public var next: ListNode?
+    public init() { self.val = 0; self.next = nil; }
+    public init(_ val: Int) { self.val = val; self.next = nil; }
+    public init(_ val: Int, _ next: ListNode?) { self.val = val; self.next = next; }
+}
+
+extension ListNode: CustomStringConvertible {
+    public var description: String {
+        guard let next = next else {
+            return "\(val)"
+        }
+        return "\(val)->" + String(describing: next)
+    }
+}
+
+class Solution {
+    func removeElements(_ head: ListNode?, _ val: Int) -> ListNode? {
+        guard let head = head else { return nil }
+        head.next = removeElements(head.next, val)
+        return head.val == val ? head.next : head
+    }
+}
+
+    /// Unit Tests for Solution Class.
+    class SolutionTests: XCTestCase {
+        var solution: Solution!
+
+        override func setUp() {
+            super.setUp()
+            solution = Solution()
+        }
+
+        override func tearDown() {
+            super.tearDown()
+        }
+
+        func testExample1() {
+            print("                ")
+            print("[Test Example 1]")
+            let node1 = ListNode(4)
+            let node2 = ListNode(5)
+            let node3 = ListNode(1)
+            let node4 = ListNode(9)
+            node1.next = node2
+            node2.next = node3
+            node3.next = node4
+            Solution().removeElements(node1, 1)
+            let output = String(describing: node1)
+            XCTAssert( output == "4->5->9")
+        }
+    }
+
+    class TestObserver: NSObject, XCTestObservation {
+        func testCase(_ testCase: XCTestCase,
+                      didFailWithDescription description: String,
+                      inFile filePath: String?,
+                      atLine lineNumber: Int) {
+            print("                                                                   ")
+            print("*******************************************************************")
+            print("Test failed on line \(lineNumber): \(testCase.name), \(description)")
+            print("*******************************************************************")
+            print("                                                                   ")
+        }
+    }
+
+    let testObserver = TestObserver()
+    XCTestObservationCenter.shared.addTestObserver(testObserver)
+    SolutionTests.defaultTestSuite.run()
+
+
+    //: [Next](@next)
