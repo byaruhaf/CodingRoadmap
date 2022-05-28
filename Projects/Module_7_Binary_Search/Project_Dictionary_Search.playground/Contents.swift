@@ -7,16 +7,62 @@
 //http://blog.notdot.net/2007/4/Damn-Cool-Algorithms-Part-1-BK-Trees
 
 import Cocoa
+import XCTest
+
+
+extension String {
+    func levenshteinDistanceScore(to string: String, ignoreCase: Bool = true, trimWhiteSpacesAndNewLines: Bool = true) -> Float {
+
+        var firstString = self
+        var secondString = string
+
+        if ignoreCase {
+            firstString = firstString.lowercased()
+            secondString = secondString.lowercased()
+        }
+        if trimWhiteSpacesAndNewLines {
+            firstString = firstString.trimmingCharacters(in: .whitespacesAndNewlines)
+            secondString = secondString.trimmingCharacters(in: .whitespacesAndNewlines)
+        }
+
+        let empty = [Int](repeating:0, count: secondString.count)
+        var last = [Int](0...secondString.count)
+
+        for (i, tLett) in firstString.enumerated() {
+            var cur = [i + 1] + empty
+            for (j, sLett) in secondString.enumerated() {
+                cur[j + 1] = tLett == sLett ? last[j] : Swift.min(last[j], last[j + 1], cur[j])+1
+            }
+            last = cur
+        }
+
+        // maximum string length between the two
+        let lowestScore = max(firstString.count, secondString.count)
+
+        if let validDistance = last.last {
+            return  1 - (Float(validDistance) / Float(lowestScore))
+        }
+
+        return 0.0
+    }
+}
+
+
+infix operator =~
+func =~(string: String, otherString: String) -> Bool {
+    return string.levenshteinDistanceScore(to: otherString) >= 0.5
+}
+
+
+class Solution {
 var wordArray: [String] = []
 
-public func binarySearch<T: Comparable>(_ a: [T], key: T) -> Int? {
+public func binarySearch(_ a: [String], key: String) -> Int? {
     var lowerBound = 0
     var upperBound = a.count
-    var lastmidIndex:Int = 0
     while lowerBound < upperBound {
         let midIndex = lowerBound + (upperBound - lowerBound) / 2
-        lastmidIndex = midIndex
-        if a[midIndex] == key {
+        if key =~ a[midIndex]  {
             return midIndex
         } else if a[midIndex] < key {
             lowerBound = midIndex + 1
@@ -24,53 +70,77 @@ public func binarySearch<T: Comparable>(_ a: [T], key: T) -> Int? {
             upperBound = midIndex
         }
     }
-    print(a[lowerBound...upperBound])
-    return lastmidIndex
+    return nil
 }
 
 
-do {
-    guard let fileUrl = Bundle.main.url(forResource: "words", withExtension: "txt") else { fatalError() }
-    let text = try String(contentsOf: fileUrl, encoding: String.Encoding.utf8)
-    wordArray = text.components(separatedBy: "\n")
-} catch let error {
-    print("Fatal Error: \(error.localizedDescription)")
-}
+func loadWords() {
+    do {
+        guard let fileUrl = Bundle.main.url(forResource: "words", withExtension: "txt") else { fatalError() }
+        let text = try String(contentsOf: fileUrl, encoding: String.Encoding.utf8)
+        wordArray = text.components(separatedBy: "\n")
+        wordArray.sort()
+    } catch let error {
+        print("Fatal Error: \(error.localizedDescription)")
+    }
 
-// print(wordArray)
+}
 
 func serach(_ word:String, arr:[String]) -> String{
-    let filteredArr = arr.filter { $0.count > word.count }
-    guard let index = binarySearch(filteredArr,key: word) else { return ""}
-    print(wordArray[index])
-    return wordArray[index]
+    guard let index = binarySearch(arr, key: word) else { return ""}
+    return arr[index]
 }
 
-serach("hupaticology", arr: wordArray)
-
-//
-//Given the word list: [apple, banana, bingo, cat, curl]
-//Input: bingo
-//Output: bingo
-//
-//Input: banjo
-//Output: bingo
-//
-//Input: cut
-//Output: curl
-//
-//Input: cat
-//Output: cat
+}
 
 
-//func serach(_ word:String) -> String{
-//    let testwordArray = ["apple", "banana", "bingo", "cat", "curl"]
-//    guard let index = binarySearch(testwordArray,key: word) else { return ""}
-//    print(testwordArray[index])
-//    return testwordArray[index]
-//}
-//
-//serach("bingo")
-//serach("banjo")
-//serach("cut")
-//serach("cat")
+/// Unit Tests for Solution Class.
+class ProjectTests: XCTestCase {
+    var solution: Solution!
+
+    override func setUp() {
+        super.setUp()
+        solution = Solution()
+        solution.loadWords()
+    }
+
+    override func tearDown() {
+        super.tearDown()
+    }
+
+    func testExample1() {
+        print("                ")
+        print("[Test Example 1]")
+        XCTAssert(solution.serach("Zaglossus", arr: solution.wordArray) == "Zaglossus")
+        XCTAssert(solution.serach("Zagpossus", arr: solution.wordArray) == "Zaglossus")
+    }
+    func testExample2() {
+        print("                ")
+        print("[Test Example 2]")
+        let testwordArray = ["apple", "banana", "bingo", "cat", "curl"]
+        XCTAssert(solution.serach("bingo", arr: testwordArray) == "bingo")
+        XCTAssert(solution.serach("banjo", arr: testwordArray) == "bingo")
+        XCTAssert(solution.serach("cut", arr: testwordArray) == "curl")
+        XCTAssert(solution.serach("cat", arr: testwordArray) == "cat")
+
+    }
+}
+
+class TestObserver: NSObject, XCTestObservation {
+    func testCase(_ testCase: XCTestCase,
+                  didFailWithDescription description: String,
+                  inFile filePath: String?,
+                  atLine lineNumber: Int) {
+        print("                                                                   ")
+        print("*******************************************************************")
+        print("Test failed on line \(lineNumber): \(testCase.name), \(description)")
+        print("*******************************************************************")
+        print("                                                                   ")
+    }
+}
+
+let testObserver = TestObserver()
+XCTestObservationCenter.shared.addTestObserver(testObserver)
+ProjectTests.defaultTestSuite.run()
+
+
