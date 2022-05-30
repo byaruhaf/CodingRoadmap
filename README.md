@@ -21,12 +21,11 @@ This [coding roadmap](https://www.engineeringwithutsav.com/coding-roadmap) is a 
 ## How Navigate This Repo 
 Individual playgrouds can be opend directly via the links Listed below.
 
-The playgrounds are also grouped in two workspace files.
+The playgrounds are also grouped in to a workspace files
 
-* Projects.xcworkspace
-* Self_Assessment.xcworkspace
+* **Projects.xcworkspace**
 
-Open the workspace files to navigate the playgound grouped for Projects's and Self Assessment's.
+Open the workspace files to navigate the playgound grouped for Projects's.
 
 ### Projects's
 
@@ -41,18 +40,6 @@ Open the workspace files to navigate the playgound grouped for Projects's and Se
 * [Module 9](./Projects/Module_9_Graphs/)
 * [Module 10](./Projects/Module_10_Final_Project/)
 
-### Self Assessment's
-
-* [Module 0](./Self_Assessment/Module_0_Basics/)
-* [Module 1](./Self_Assessment/Module_1_String_Manipulation/)
-* [Module 2](./Self_Assessment/Module_2_LinkedLists/)
-* [Module 3](./Self_Assessment/Module_3_Hashtables/)
-* [Module 4](./Self_Assessment/Module_4_Stacks/)
-* [Module 5](./Self_Assessment/Module_5_Queues/)
-* [Module 6](./Self_Assessment/Module_6_Recursion/)
-* [Module 7](./Self_Assessment/Module_7_Binary_Search/)
-* [Module 8](./Self_Assessment/Module_8_Trees/)
-* [Module 9](./Self_Assessment/Module_9_Graphs/)
 
 ##  Final Roadmap Project
 Add video showing final project in action
